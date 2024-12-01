@@ -42,6 +42,8 @@ main > div {
 div {
   flex-basis: 350px;
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 div > img {
   width: 100%;
