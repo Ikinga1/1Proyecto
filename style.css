@@ -3,46 +3,148 @@
   padding: 0;
   margin: 0;
 }
+/* Header */
 header {
   display: flex;
   padding: 40px;
   align-items: center;
   background-color: black;
-  flex-grow: 2;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
 header > img {
-  width: 350px;
-  height: 150px;
+  width: 300px;
+  height: 100px;
+  object-fit: cover;
 }
+
 header > nav {
-  flex-grow: 2;
+  flex-wrap: wrap;
+  flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
+
 .list {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
   list-style: none;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
+
 a {
   color: white;
-  display: flex;
   font-weight: 600;
   text-decoration: none;
   font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
+
+/* Main */
+main {
+  padding: 20px;
+}
+
 main > div {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
   gap: 20px;
+  justify-content: space-between;
 }
+
 div {
   flex-basis: 350px;
   flex-grow: 1;
 }
+
 div > img {
   width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Media Queries */
+
+/* Pantallas grandes (tabletas y laptops) */
+@media (max-width: 1200px) {
+  header > img {
+    width: 250px;
+    height: 100px;
+  }
+
+  .list {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .list a {
+    font-size: 18px;
+  }
+
+  main > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div {
+    flex-basis: 100%;
+  }
+}
+
+/* Pantallas medianas (tabletas y dispositivos pequeños) */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header > img {
+    width: 200px;
+    height: 80px;
+  }
+
+  .list {
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .list a {
+    font-size: 16px;
+  }
+
+  main > div {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  div {
+    flex-basis: 100%;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  header {
+    padding: 15px;
+  }
+
+  .list a {
+    font-size: 14px;
+  }
+
+  div {
+    flex-basis: 100%;
+  }
+
+  div > img {
+    height: 200px;
+  }
 }
